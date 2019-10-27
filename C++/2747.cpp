@@ -24,5 +24,4 @@ int main() {
 	}
 
 	cout << arr[N] << "\n";
-
 }
