@@ -8,7 +8,7 @@ int main() {
 
 	for (int i = 0; i < N; i++) {
 		
-		for (int j = N - i -1; j > 0; j--) {  //맨 앞에 한칸 더 띄지 않도록 주의
+		for (int j = N - i -1; j > 0; j--) {  //맨 앞에 한칸 더 띄지 않도록 주의한다
 			cout << " ";
 		}
 
