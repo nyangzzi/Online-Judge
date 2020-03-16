@@ -2,21 +2,19 @@
 using namespace std;
 
 int main() {
-	
-	int h = 0, m = 0;
 
+	int h = 0, m = 0;
 	cin >> h >> m;
-	
-	if (h == 0) {
-		h = 23;
-		cout << h << " " << m + 15 << endl;
+
+	m -= 45;
+
+	if (m < 0) {
+		m += 60;
+		h -= 1;
 	}
-	else {
-		if (m >= 45) {
-			cout << h << " " << m - 45 << endl;
-		}
-		else {
-			cout << h - 1 << " " << m + 15 << endl;
-		}
-	}
+
+	if (h < 0) h += 24;
+
+	cout << h << " " << m << endl;
+
 }
