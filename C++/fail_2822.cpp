@@ -1,3 +1,5 @@
+// 정렬부분 재확인
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
