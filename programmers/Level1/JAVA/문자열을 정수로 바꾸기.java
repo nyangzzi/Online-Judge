@@ -9,7 +9,13 @@ class Solution {
             }
             answer = 0-answer;
         }
-        else{
+        else if(s.charAt(0) == '+'){
+            for(int i = 1; i<s.length(); i++){
+                answer *= 10;
+                answer += s.charAt(i) - '0';
+            }
+        }
+        else {
             for(int i =0; i<s.length(); i++){
                 answer *= 10;
                 answer += s.charAt(i) - '0';
