@@ -6,6 +6,7 @@ string solution(vector<int> numbers, string hand) {
     string answer = "";
     int nowL = -1, nowR = -1;
     for(int i = 0; i < numbers.size(); i++){
+        
         if(numbers[i] == 1 || numbers[i] == 4 || numbers[i] == 7) {answer += 'L'; nowL = numbers[i];}
         else if(numbers[i] == 3 || numbers[i] == 6 || numbers[i] == 9) {answer += 'R'; nowR = numbers[i];}
         else if(numbers[i] == 2){
@@ -22,8 +23,8 @@ string solution(vector<int> numbers, string hand) {
             else if(nowR == 0 || nowR == 9) distR = 3;
             else if(nowR == -1) distR = 4;
             
-            if(nowL < nowR) {answer += 'L'; nowL = numbers[i];}
-            else if(nowL > nowR) {answer += 'R'; nowR = numbers[i];}
+            if(distL < distR) {answer += 'L'; nowL = numbers[i];}
+            else if(distL > distR) {answer += 'R'; nowR = numbers[i];}
             else if(hand == "right") {answer += 'R'; nowR = numbers[i];}
             else {answer += 'L'; nowL = numbers[i];}
         }
@@ -39,8 +40,8 @@ string solution(vector<int> numbers, string hand) {
             else if(nowR == 3 || nowR == 0 || nowR == 9) distR = 2;
             else if(nowR == -1) distR = 3;
             
-            if(nowL < nowR) {answer += 'L'; nowL = numbers[i];}
-            else if(nowL > nowR) {answer += 'R'; nowR = numbers[i];}
+            if(distL < distR) {answer += 'L'; nowL = numbers[i];}
+            else if(distL > distR) {answer += 'R'; nowR = numbers[i];}
             else if(hand == "right") {answer += 'R'; nowR = numbers[i];}
             else {answer += 'L'; nowL = numbers[i];}
         }
@@ -56,8 +57,8 @@ string solution(vector<int> numbers, string hand) {
             else if(nowR == 6 || nowR == -1 || nowR == 2) distR = 2;
             else if(nowR == 3) distR = 3;
             
-            if(nowL < nowR) {answer += 'L'; nowL = numbers[i];}
-            else if(nowL > nowR) {answer += 'R'; nowR = numbers[i];}
+            if(distL < distR) {answer += 'L'; nowL = numbers[i];}
+            else if(distL > distR) {answer += 'R'; nowR = numbers[i];}
             else if(hand == "right") {answer += 'R'; nowR = numbers[i];}
             else {answer += 'L'; nowL = numbers[i];}
         }
@@ -75,11 +76,12 @@ string solution(vector<int> numbers, string hand) {
             else if(nowR == 2 || nowR == 6) distR = 3;
             else if(nowR == 3) distR = 4;
             
-            if(nowL < nowR) {answer += 'L'; nowL = numbers[i];}
-            else if(nowL > nowR) {answer += 'R'; nowR = numbers[i];}
+            if(distL < distR) {answer += 'L'; nowL = numbers[i];}
+            else if(distL > distR) {answer += 'R'; nowR = numbers[i];}
             else if(hand == "right") {answer += 'R'; nowR = numbers[i];}
             else {answer += 'L'; nowL = numbers[i];}
         }
+       
     }
     return answer;
 }
