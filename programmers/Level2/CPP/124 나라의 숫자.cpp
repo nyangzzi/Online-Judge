@@ -9,19 +9,26 @@ string solution(int n) {
     
     while(n > 0){
         s += n % 3 + '0';
-        n /= 3;
+        n /= 3;        
     }
-    
-    cout << s<<endl;
+ 
+    for(int i = 0; i < s.size(); i++){
+        if(i != s.size()-1 && s[i] == '0'){
+            s[i+1]--;
+            s[i] = '4';
+        }
+        else if(i != s.size()-1 && s[i] < '0'){
+            s[i+1]--;
+            s[i] = '2';
+        }
+    }
     
     for(int i = s.size()-1; i>=0; i--){
-        if(s[i] == '0') {
-            answer[answer.size()-1]--;
-            answer += '4';
-        }
-        else answer += s[i];
-               
+        answer += s[i];
+        if(answer[0] == '0') answer = "";
     }
-    if(s == "01") answer = "4";
+    
+    
+    
     return answer;
 }
