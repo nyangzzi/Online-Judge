@@ -11,13 +11,6 @@ int main() {
         int n = 0, m = 0;
         cin >> n >> m;
         
-        /*if(n > m) {	//m이 무조건 크도록
-        	int tmp =0;
-            tmp = n;
-            n = m;
-            m = tmp;
-        }*/
-        
         vector<int> a;
         vector<int> b;
         
@@ -35,13 +28,23 @@ int main() {
         
         int max = 0;
         
-        for(int i = 0; i<=m-n; i++){
-            int mul = 0;
-            for(int j = 0; j < n; j++){
-                if(n < m) {mul += (a[j] * b[i+j]);}
-                else {mul += (b[j] * a[i+j]);}
-            }       
-            if(mul > max) max = mul;
+        if(n < m){
+        	for(int i = 0; i<=m-n; i++){
+            	int mul = 0;
+            	for(int j = 0; j < n; j++){
+                	mul += (a[j] * b[i+j]);
+            	}       
+            	if(mul > max) max = mul;
+        	}
+        }
+        else {
+            for(int i = 0; i<=n-m; i++){
+            	int mul = 0;
+            	for(int j = 0; j < m; j++){
+                	mul += (b[j] * a[i+j]);
+            	}       
+            	if(mul > max) max = mul;
+        	}
         }
         
         cout << "#" << test << " " << max <<endl;
