@@ -23,5 +23,7 @@ int main() {
 		else if(op== "==" && a == b) cout << "true" << endl;
 		else if(op == "!=" && a != b) cout << "true" << endl;
 		else cout << "false" << endl;
+		
+		cnt++;
 	}
 }
